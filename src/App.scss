@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Russo+One&display=swap");
+
+//variables
+$accentColor: orange;
+$primaryColor: gray;
+$secondaryColor: lightgray;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Russo One", sans-serif;
+  outline: none;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  #drum-machine {
+    border: 5px solid $accentColor;
+    background-color: $secondaryColor;
+    min-width: 300px;
+
+    .drum-pads {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+
+      .drum-pad {
+        background-color: grey;
+        box-shadow: black 3px 3px 5px;
+        height: 70px;
+        border-radius: 5px;
+        border: none;
+        font-family: "Russo One", sans-serif;
+      }
+
+      .drum-pad:hover {
+        cursor: pointer;
+      }
+
+      .drum-pad:active {
+        transform: translate(2px, 2px);
+        transition: all 0.05s ease-in-out;
+      }
+
+      .highlight {
+        background-color: $accentColor;
+      }
+    }
+
+    .controls-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+
+      #display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12em;
+        height: 2em;
+        background-color: $primaryColor;
+        border-radius: 5px;
+      }
+
+      .control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .toggle-container {
+          width: 50px;
+          height: 20px;
+          background-color: black;
+          padding: 2px;
+
+          .toggle-selector {
+            width: 20px;
+            height: 15px;
+            background-color: blue;
+            cursor: pointer;
+          }
+
+          .on {
+            float: right;
+          }
+        }
+      }
+
+      [type='range'] {
+        -webkit-appearance: none;
+        margin: 12.5px 0;
+        width: 100%;
+      }
+      [type='range']:focus {
+        outline: none;
+      }
+      [type='range']::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 2px 2px 2px black, 0 0 2px gray;
+        background: gray;
+        border: 1px solid black;
+        border-radius: 0;
+      }
+      [type='range']::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px black, 0 0 1px gray;
+        border: 0 solid white;
+        height: 25px;
+        width: 8px;
+        border-radius: 0;
+        background: blue;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -11px;
+      }
+      [type='range']:focus::-webkit-slider-runnable-track {
+        background: gray;
+      }
+      [type='range']::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 2px 2px 2px black, 0 0 2px gray;
+        background: gray;
+        border: 1px solid black;
+        border-radius: 0;
+      }
+      [type='range']::-moz-range-thumb {
+        box-shadow: 1px 1px 1px black, 0 0 1px gray;
+        border: 0 solid white;
+        height: 25px;
+        width: 8px;
+        border-radius: 0;
+        background: blue;
+        cursor: pointer;
+      }
+      [type='range']::-ms-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: transparent;
+        border-color: transparent;
+        border-width: 8px 0;
+        color: transparent;
+      }
+      [type='range']::-ms-fill-lower {
+        box-shadow: 2px 2px 2px black, 0 0 2px gray;
+        background: gray;
+        border: 1px solid black;
+        border-radius: 0;
+      }
+      [type='range']::-ms-fill-upper {
+        box-shadow: 2px 2px 2px black, 0 0 2px gray;
+        background: gray;
+        border: 1px solid black;
+        border-radius: 0;
+      }
+      [type='range']::-ms-thumb {
+        box-shadow: 1px 1px 1px black, 0 0 1px gray;
+        border: 0 solid white;
+        height: 25px;
+        width: 8px;
+        border-radius: 0;
+        background: blue;
+        cursor: pointer;
+      }
+      [type='range']:focus::-ms-fill-lower {
+        background: gray;
+      }
+      [type='range']:focus::-ms-fill-upper {
+        background: gray;
+      }
+
+    }
+  }
+}
